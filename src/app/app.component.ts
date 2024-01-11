@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'anglearn';
+  inputText:string = ""
+
+  onSubmit(inputEl:HTMLInputElement){
+    this.inputText = inputEl.value
+    console.log(this.inputText);
+    
+
+  }
 }
