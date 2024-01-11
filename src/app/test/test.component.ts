@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
 
 @Component({
     selector:'app-test',
@@ -6,7 +6,7 @@ import { AfterContentInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleC
 
 })
 
-export class TestComponent implements OnInit,OnChanges ,DoCheck , AfterContentInit{
+export class TestComponent implements OnInit,OnChanges ,DoCheck , AfterContentInit , AfterContentChecked, AfterViewInit , AfterViewChecked , OnDestroy{
     title = "shafin"
 
   @Input()  value:string = "shafin"
@@ -40,6 +40,25 @@ ngOnChanges(changes: SimpleChanges): void {
       console.log("ngaftercontentinit called");
       
   }
+  ngAfterContentChecked(): void {
+      console.log(" content checked is called");
+      
+  }
+  ngAfterViewInit(): void {
+      console.log("afterview init called");
+      
+  }
+
+  ngAfterViewChecked(): void {
+    console.log("after view cheked called");
+    
+  }
+  ngOnDestroy(): void {
+      console.log("NgOnDestroy is called");
+      
+  }
+
+
 
   
 }
