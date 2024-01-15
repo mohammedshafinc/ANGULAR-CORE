@@ -4,4 +4,11 @@
   <h4>this is projected content {{ inputText }}</h4>
 </app-test>
 <button (click)="destroybutton()">Destroy</button> -->
-<app-parent></app-parent>
+<!-- <app-parent></app-parent> -->
+<div class="container">
+  <h2>Observable in angular</h2>
+  <div class="data-list" *ngFor="let x of data">
+    {{ x }}
+  </div>
+  <button class="btn btn-success" (click)="getData()">Get data</button>
+</div>
